@@ -1,0 +1,75 @@
+import requests
+import json
+
+url = "http://localhost:8000/predict"
+payload = {
+    "data": json.dumps({
+        "id": "[2322918, 2322918, 2322918]",
+        "rn": "[1, 2, 3]",
+        "pre_since_opened": "[0, 7, 19]",
+        "pre_since_confirmed": "[9, 9, 16]",
+        "pre_pterm": "[4, 4, 12]",
+        "pre_fterm": "[14, 8, 15]",
+        "pre_till_pclose": "[1, 1, 8]",
+        "pre_till_fclose": "[10, 11, 8]",
+        "pre_loans_credit_limit": "[17, 3, 10]",
+        "pre_loans_next_pay_summ": "[4, 6, 6]",
+        "pre_loans_outstanding": "[3, 3, 4]",
+        "pre_loans_total_overdue": "[0, 0, 0]",
+        "pre_loans_max_overdue_sum": "[1, 2, 2]",
+        "pre_loans_credit_cost_rate": "[5, 2, 3]",
+        "pre_loans5": "[6, 6, 6]",
+        "pre_loans530": "[16, 16, 16]",
+        "pre_loans3060": "[5, 5, 5]",
+        "pre_loans6090": "[4, 4, 4]",
+        "pre_loans90": "[8, 8, 8]",
+        "is_zero_loans5": "[1, 1, 1]",
+        "is_zero_loans530": "[0, 1, 0]",
+        "is_zero_loans3060": "[1, 1, 1]",
+        "is_zero_loans6090": "[1, 1, 1]",
+        "is_zero_loans90": "[1, 1, 1]",
+        "pre_util": "[16, 16, 0]",
+        "pre_over2limit": "[2, 2, 2]",
+        "pre_maxover2limit": "[3, 17, 17]",
+        "is_zero_util": "[1, 1, 0]",
+        "is_zero_over2limit": "[1, 1, 1]",
+        "is_zero_maxover2limit": "[0, 1, 1]",
+        "enc_paym_0": "[0, 0, 0]",
+        "enc_paym_1": "[0, 0, 1]",
+        "enc_paym_2": "[0, 0, 0]",
+        "enc_paym_3": "[0, 0, 0]",
+        "enc_paym_4": "[0, 0, 3]",
+        "enc_paym_5": "[1, 0, 3]",
+        "enc_paym_6": "[0, 3, 3]",
+        "enc_paym_7": "[0, 3, 3]",
+        "enc_paym_8": "[0, 3, 3]",
+        "enc_paym_9": "[0, 3, 3]",
+        "enc_paym_10": "[0, 3, 3]",
+        "enc_paym_11": "[1, 4, 4]",
+        "enc_paym_12": "[0, 3, 3]",
+        "enc_paym_13": "[0, 3, 3]",
+        "enc_paym_14": "[0, 3, 3]",
+        "enc_paym_15": "[0, 3, 3]",
+        "enc_paym_16": "[0, 3, 3]",
+        "enc_paym_17": "[0, 3, 3]",
+        "enc_paym_18": "[0, 3, 3]",
+        "enc_paym_19": "[0, 3, 3]",
+        "enc_paym_20": "[1, 4, 4]",
+        "enc_paym_21": "[0, 3, 3]",
+        "enc_paym_22": "[0, 3, 3]",
+        "enc_paym_23": "[0, 3, 3]",
+        "enc_paym_24": "[4, 4, 4]",
+        "enc_loans_account_holder_type": "[1, 1, 1]",
+        "enc_loans_credit_status": "[3, 2, 2]",
+        "enc_loans_credit_type": "[3, 3, 4]",
+        "enc_loans_account_cur": "[1, 1, 1]",
+        "pclose_flag": "[1, 1, 0]",
+        "fclose_flag": "[0, 1, 0]"
+    })
+}
+headers = {
+    "Content-Type": "application/json"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())
